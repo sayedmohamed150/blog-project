@@ -24,7 +24,7 @@ const CTA = () => {
             <h2 className='text-white font-roboto font-bold text-2xl'>Get our stories delivered From us to your inbox weekly.</h2>
             <div className='w-full max-w-[494px] mt-12 space-y-3 mx-auto'>
                 <input type="text" className='px-4 py-3 rounded-lg w-full placeholder:text-dark-light' placeholder='Your Email' />
-                <button>Get started</button>
+                <button className='px-4 py-3 '>Get started</button>
             </div>
           </div>
         </div>
