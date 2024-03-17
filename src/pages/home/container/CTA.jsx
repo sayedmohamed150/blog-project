@@ -1,6 +1,7 @@
 import React from 'react'
+import { images } from '../../../constants'
 
-const CTA = () => {
+const CTA = (className) => {
   return (
     <>
     <svg  
@@ -19,7 +20,7 @@ const CTA = () => {
     </svg>
 
      <section className='relative bg-dark-hard px-5'>
-        <div className='container grid grid-cols-12 mx-auto py-10'>
+        <div className='container grid grid-cols-12 mx-auto py-10 md:pd-20 md:text-4xl md:text-center md:leading-normal'>
           <div className='col-span-12'>
             <h2 className='text-white font-roboto font-bold text-2xl'>Get our stories delivered From us to your inbox weekly.</h2>
             <div className='w-full max-w-[494px] mt-12 space-y-3 mx-auto'>
@@ -31,19 +32,24 @@ const CTA = () => {
             after 9pm will get a reponse the following day.
             </p>
           </div>
-          <div className='col-span-12 hidden mb-[70px]'>
-          <div className={`rounded-xl overflow-hidden shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] ${className}`}>
-            <img src={images.Post1Image} alt="title" 
+          <div className='col-span-12 hidden mb-[70px] md:block md:order-first'>
+            <div className='w-3/4 mx-auto relative'>
+              <div className='w-1/2 h-1/2 bg-[#FC5A5A] rounded-lg absolute top-[10%] -right-[8%]'/>
+              <div className='w-1/2 h-1/2 bg-white rounded-lg opacity-[.06] absolute -bottom-[10%] -left-[8%]'/>
+                        <div className="w-full rounded-xl bg-white p-3 x-[1] relative">
+            <img src={images.CtaImage} alt="title" 
             
             className="w-full object-cover object-center h-auto md:h-52 lg:h-48 xl:h-60 " />
 
             <div className="p-5">
                 <h2 className="font-roboto font-bold text-xl text-dark-soft md:text-2xl lg:text-[28px]">Future of Work</h2>
                 <p className="text-dark-light mt-3 text-sm md:text-lg">
-                Majority of peole will work in jobs that don’t exist today.
+                Majority of peole will work in jobs that don't exist today.
                 </p>
             </div>
         </div>
+            </div>
+
           </div>
         </div>
 
