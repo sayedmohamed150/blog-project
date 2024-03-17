@@ -1,7 +1,7 @@
 import React from 'react'
 import { images } from '../../../constants'
 
-const CTA = (className) => {
+const CTA = ({className}) => {
   return (
     <>
     <svg  
