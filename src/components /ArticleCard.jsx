@@ -36,7 +36,7 @@ const ArticleCard = ({className}) => {
                 </div>
             </div>
         </div>
-  )
-}
+  );
+};
 
 export default ArticleCard
