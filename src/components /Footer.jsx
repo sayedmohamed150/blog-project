@@ -1,6 +1,8 @@
 import React from 'react'
-import { AiOutlineTwitter } from "react-icons/ai";
+import {AiOutlineTwitter, AiFillYoutube, AiFillInstagram} from "react-icons/ai";
 import { FaFacebook } from "react-icons/fa";
+import { BsTelegram } from "react-icons/bs";
+
 
 
 import {images} from "../constants";
