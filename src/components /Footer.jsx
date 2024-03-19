@@ -10,9 +10,9 @@ import {images} from "../constants";
 const Footer = () => {
   return (
     <section className='bg-dark-hard'>
-      <footer className='container mx-auto grid grid-cols-10 px-5 py-10 gap-y-10 gap-x-5'>
+      <footer className='container mx-auto grid grid-cols-10 px-5 py-10 gap-y-10 gap-x-5 md:pt-20 md:grid-cols-12'>
 
-        <div className='col-span-5'>
+        <div className='col-span-5' md:col-span-4>
           <h3 className='text-dark-light font-bold'>Product</h3>
           <ul className='text-[#959EAD] text-sm mt-5 space-y-4'>
             <li>
@@ -32,7 +32,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className='col-span-5'>
+        <div className='col-span-5' md:col-span-4>
           <h3 className='text-dark-light font-bold'>Services</h3>
           <ul className='text-[#959EAD] text-sm mt-5 space-y-4'>
             <li>
@@ -52,7 +52,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className='col-span-5'>
+        <div className='col-span-5' md:col-span-4>
           <h3 className='text-dark-light font-bold'>Company</h3>
           <ul className='text-[#959EAD] text-sm mt-5 space-y-4'>
             <li>
@@ -69,7 +69,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className='col-span-5'>
+        <div className='col-span-5' md:col-span-4>
           <h3 className='text-dark-light font-bold'>More</h3>
           <ul className='text-[#959EAD] text-sm mt-5 space-y-4'>
             <li>
@@ -83,15 +83,36 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div>
-          <img src={images.Logo} alt="logo" />
-          <p>Build a modern and creative website with crealand</p>
+        <div className='col-span-10 md:order-first md:col-span-4'>
+          <img src={images.Logo} alt="logo" className='brightness-0 invert mx-auto' />
+          <p className='text-sm text-dark-light text-center mt-4'>Build a modern and creative website with crealand</p>
           <ul className='flex justify-center items-center mt-5 space-x-4 text-gray-300'>
             <li>
               <a href='/'>
-
+              <AiOutlineTwitter className='w-6 h-auto '/>
               </a>
             </li>
+            <li>
+              <a href='/'>
+              <AiFillYoutube className='w-6 h-auto '/>
+              </a>
+            </li>
+            <li>
+              <a href='/'>
+              <AiFillInstagram className='w-6 h-auto '/>
+              </a>
+            </li>
+            <li>
+              <a href='/'>
+              <FaFacebook className='w-6 h-auto '/>
+              </a>
+            </li>
+            <li>
+              <a href='/'>
+              <BsTelegram className='w-6 h-auto '/>
+              </a>
+            </li>
+
           </ul>
         </div>
 
