@@ -13,8 +13,8 @@ const Footer = () => {
       <footer className='container mx-auto grid grid-cols-10 px-5 py-10 gap-y-10 gap-x-5 md:pt-20 md:grid-cols-12'>
 
         <div className='col-span-5 md:col-span-4 '>
-          <h3 className='text-dark-light font-bold'>Product</h3>
-          <ul className='text-[#959EAD] text-sm mt-5 space-y-4'>
+          <h3 className='text-dark-light font-bold md:text-lg'>Product</h3>
+          <ul className='text-[#959EAD] text-sm mt-5 space-y-4 md:text-base'>
             <li>
               <a href='/'>Landingpage</a>
             </li>
@@ -33,7 +33,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className='col-span-5 md:col-span-4 '>
-          <h3 className='text-dark-light font-bold'>Services</h3>
+          <h3 className='text-dark-light font-bold md:text-lg'>Services</h3>
           <ul className='text-[#959EAD] text-sm mt-5 space-y-4'>
             <li>
               <a href='/'>Documentation</a>
@@ -53,7 +53,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className='col-span-5 md:col-span-4 '>
-          <h3 className='text-dark-light font-bold'>Company</h3>
+          <h3 className='text-dark-light font-bold md:text-lg'>Company</h3>
           <ul className='text-[#959EAD] text-sm mt-5 space-y-4'>
             <li>
               <a href='/'>About</a>
@@ -70,7 +70,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className='col-span-5 md:col-span-4 '>
-          <h3 className='text-dark-light font-bold'>More</h3>
+          <h3 className='text-dark-light font-bold md:text-lg'>More</h3>
           <ul className='text-[#959EAD] text-sm mt-5 space-y-4'>
             <li>
               <a href='/'>Documentation</a>
