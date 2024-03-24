@@ -3,12 +3,22 @@ import MainLayout from "../../components /MainLayout";
 import BreadCrumbs from "../../components /BreadCrumbs";
 import { images } from "../../constants";
 import { Link } from "react-router-dom";
+import SuggestedPosts from "./container/SuggestedPosts";
 
 const BreadCrumbsData = [
   { name: "Home", link: "/" },
   { name: "Blog", link: "/blog" },
   { name: "Article title", link: "/blog/1" },
 ];
+
+const postsData = [
+    {
+      _id: "1",
+      image: images.Post1Image,
+      title:"Help children get better education",
+      createdAt:""
+    }
+]
 
 const ArticleDetailPage = () => {
   return (
@@ -42,6 +52,7 @@ const ArticleDetailPage = () => {
             </p>
           </div>
         </article>
+        <SuggestedPosts header="Latest Article" />
       </section>
     </MainLayout>
   );
