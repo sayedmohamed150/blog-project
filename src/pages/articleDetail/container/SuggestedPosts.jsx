@@ -1,6 +1,7 @@
 import React from 'react'
 import { images } from '../../../constants'
 import { BsTags } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 const SuggestedPosts = ({ className, header, posts = [], tags  }) => {
   return (
@@ -26,7 +27,7 @@ const SuggestedPosts = ({ className, header, posts = [], tags  }) => {
         <h2 className='flex flex-wrap gap-x-2 gap-y-2 mt-4'>Tags</h2>
         <div>
             {tags.map((item) => (
-
+               <Link to="/" className='inline-block rounded-md px-3 py-1.5 bg-primary font-roboto text-xs text-white'>{item}</Link>
             ))}
         </div>
     </div>
