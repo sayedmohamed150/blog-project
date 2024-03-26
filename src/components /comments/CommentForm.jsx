@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const CommentForm = ({ btnLabel }) => {
-const [value, setValue] = useState("second")
+const [value, setValue] = useState()
 
 const submitHandler = (e) => {
     e.preventDefault ()
@@ -9,11 +9,11 @@ const submitHandler = (e) => {
 
   return (
     <form onSubmit={submitHandler}>
-        <div>
+        <div className='flex flex-col items-end border border-primary rounded-lg p-4'>
             <textarea 
             className='w-full focus:outline-none' 
             rows="5" 
-            placeholder='Leave your comment here...' 
+            placeholder="Leave your comment here..." 
             value={value} 
             onChange={(e) => setValue(e.target.value)}
             />
