@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getCommentsData } from "../../data/comments";
+import Comment from "./Comment";
 
 import CommentForm from "./CommentForm";
 
@@ -43,7 +44,8 @@ useEffect (() => {
       />
       <div className="space-y-4 mt-8">
         {mainComments.map((comment) => (
-         <Comment />
+         <Comment comment={comment}/>
+          
         ))}
       </div>
     </div>
