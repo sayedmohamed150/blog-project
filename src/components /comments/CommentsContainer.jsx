@@ -4,7 +4,8 @@ import { getCommentsData } from "../../data/comments";
 import CommentForm from "./CommentForm";
 
 const CommentsContainer = ({ className }) => {
-const [comments, setcomments] = useState([]);
+  const [comments, setComments] = useState([]);
+  const mainComments = comments.filter ((comment) => comment.parent === null );
   
 console.log(comments);
 
@@ -12,6 +13,7 @@ useEffect (() => {
 
   (async() => {
     const commentData = await getCommentsData();
+    setComments(commentData);
   })()
 }, [])
 
@@ -22,12 +24,15 @@ useEffect (() => {
         _id: "a",
         name: "Mohammad Rezaii",
       },
-      desc: "it was a nice post, Thank you!",
+      desc: value,
       post: "1",
-      parent: null,
-      replyOnUser: null,
+      parent: parent,
+      replyOnUser: replyOnUser,
       createdAt: "2022-12-31T17:22:05.092+0000",
     };
+      setComments((curState) => {
+        return [newComment, ...curState]
+      })
   };
 
   return (
@@ -36,6 +41,11 @@ useEffect (() => {
         btnLabel="Send"
         formSubmitHandler={(value) => addCommentHandler(value)}
       />
+      <div className="space-y-4 mt-8">
+        {mainComments.map((comment) => (
+         <Comment />
+        ))}
+      </div>
     </div>
   );
 };
