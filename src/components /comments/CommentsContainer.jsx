@@ -4,9 +4,10 @@ import Comment from "./Comment";
 
 import CommentForm from "./CommentForm";
 
-const CommentsContainer = ({ className }) => {
+const CommentsContainer = ({ className, logginedUserId }) => {
   const [comments, setComments] = useState([]);
   const mainComments = comments.filter ((comment) => comment.parent === null );
+  
   
 console.log(comments);
 
@@ -44,7 +45,7 @@ useEffect (() => {
       />
       <div className="space-y-4 mt-8">
         {mainComments.map((comment) => (
-         <Comment comment={comment}/>
+         <Comment comment={comment} logginedUserId={logginedUserId}/>
           
         ))}
       </div>
