@@ -3,13 +3,12 @@ import { FiMessageSquare, FiEdit2, FiTrash } from "react-icons/fi";
 
 import { images } from "../../constants";
 import CommentForm from "./CommentForm";
-import CommentForm from "./CommentForm";
 
 const Comment = ({
   comment,
   logginedUserId,
   affectedComment,
-  setAffectedCommment,
+  setAffectedComment,
   addcomment,
   parentId = null,
 }) => {
@@ -50,7 +49,7 @@ const Comment = ({
             <button
               className="flex items-center space-x-2"
               onClick={() =>
-                setAffectedCommment({ type: "replying", _id: comment._id })
+                setAffectedComment({ type: "replying", _id: comment._id })
               }
             >
               <FiMessageSquare className="w-4 h-auto" />
@@ -76,6 +75,7 @@ const Comment = ({
             formSubmitHandler={(value) =>
               addcomment(value, repliedCommentId, replyOnUserId)
             }
+            formCancelHandler={() => setAffectedComment(null)}
           />
         )}
       </div>
