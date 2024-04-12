@@ -10,7 +10,9 @@ const Comment = ({
   affectedComment,
   setAffectedComment,
   addcomment,
+  updateComment,
   parentId = null,
+  deleteComment,
 }) => {
   const isUserLoggined = Boolean(logginedUserId);
   const commentBelongsToUser = logginedUserId === comment.user._id;
@@ -18,7 +20,7 @@ const Comment = ({
     affectedComment &&
     affectedComment.type === "replying" &&
     affectedComment._id === comment._id;
-    const isEditing =
+  const isEditing =
     affectedComment &&
     affectedComment.type === "editing" &&
     affectedComment._id === comment._id;
@@ -45,17 +47,23 @@ const Comment = ({
             hour: "2-digit",
           })}
         </span>
-        <p className="font-opensans mt-[10px] text-dark-light">
-          {comment.desc}
-        </p>
+        {!isEditing && (
+          <p className="font-opensans mt-[10px] text-dark-light">
+            {comment.desc}
+          </p>
+        )}
         {isEditing && (
-          <CommentForm btnLabel="Update" formSubmitHandler={(value) => updateComment(value, comment._id)}
+          <CommentForm
+            btnLabel="Update"
+            formSubmitHandler={(value) => updateComment(value, comment._id)}
+            formCancelHandler={() => setAffectedComment(null)}
+            initialText={comment.desc}
+          />
         )}
         <div className="flex items-center gap-x-3 text-dark-light font-roboto text-sm mt-3 mb-3">
           {isUserLoggined && (
             <button
               className="flex items-center space-x-2"
-
               onClick={() =>
                 setAffectedComment({ type: "replying", _id: comment._id })
               }
@@ -66,13 +74,19 @@ const Comment = ({
           )}
           {commentBelongsToUser && (
             <>
-              <button className="flex items-center space-x-2">
-              onClick={() =>
-                setAffectedComment({ type: "editing", _id: comment._id })
+              <button
+                className="flex items-center space-x-2"
+                onClick={() =>
+                  setAffectedComment({ type: "editing", _id: comment._id })
+                }
+              >
                 <FiEdit2 className="w-4 h-auto" />
                 <span>Edit</span>
               </button>
-              <button className="flex items-center space-x-2">
+              <button
+                className="flex items-center space-x-2"
+                onClick={() => deleteComment(comment._id)}
+              >
                 <FiTrash className="w-4 h-auto" />
                 <span>Delete</span>
               </button>
