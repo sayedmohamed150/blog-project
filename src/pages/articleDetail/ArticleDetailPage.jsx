@@ -57,7 +57,7 @@ const tagsData = [
 const ArticleDetailPage = () => {
   return (
     <MainLayout>
-      <section className="container mx-auto max-w-5xl flex flex-col px-5 py-5 lg:flex-row lg:gap-x-5 lg:items-start">
+      <section className="container mx-auto max-w-5xl flex flex-col px-5 py-5 lg:flex-row lg:gap-x-5 lg:items-start text-left">
         <article className="flex-1">
           <BreadCrumbs data={BreadCrumbsData} />
           <img
@@ -67,15 +67,15 @@ const ArticleDetailPage = () => {
           />
           <Link
             to="/blog?category=selectedCategory"
-            className="text-primary text-sm font-roboto inline-block mt-4 md:text-base text-left"
+            className="text-primary text-sm font-roboto inline-block mt-4 md:text-base"
           >
             EDUCATION
           </Link>
-          <h1 className="text-xl font-medium font-roboto mt-4 text-dark-hard md:text-[26px]">
+          <h1 className="text-xl font-medium font-roboto mt-4 text-dark-hard md:text-[26px] text-left">
             Help children get better education
           </h1>
           <div className="mt-4 text-dark-soft">
-            <p className="leading-7">
+            <p className="leading-7 text-left">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
               Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae
