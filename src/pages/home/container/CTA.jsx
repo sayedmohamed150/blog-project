@@ -19,7 +19,7 @@ const CTA = ({className}) => {
      />
     </svg>
 
-     <section className='relative bg-dark-hard px-5'>
+     <section className='relative bg-dark-hard px-5 text-left'>
         <div className='container grid grid-cols-12 mx-auto py-10 md:pb-20 lg:place-items-center'>
           <div className='col-span-12 lg:col-span-6'>
             <h2 className='text-white font-roboto font-bold text-2xl md:text-4xl md:text-center md:leading-normal lg:text-left'>Get our stories delivered From us to your inbox weekly.</h2>
@@ -42,7 +42,7 @@ const CTA = ({className}) => {
             className="w-full object-cover object-center h-auto md:h-52 lg:h-48 xl:h-60 " />
 
             <div className="p-5">
-                <h2 className="font-roboto font-bold text-xl text-dark-soft md:text-2xl lg:text-[28px]">Future of Work</h2>
+                <h2 className="font-roboto font-bold text-xl text-dark-soft md:text-2xl lg:text-[28px] text-left">Future of Work</h2>
                 <p className="text-dark-light mt-3 text-sm md:text-lg">
                 Majority of peole will work in jobs that don't exist today.
                 </p>

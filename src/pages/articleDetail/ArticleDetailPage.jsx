@@ -61,7 +61,7 @@ const ArticleDetailPage = () => {
         <article className="flex-1">
           <BreadCrumbs data={BreadCrumbsData} />
           <img
-            className="rounded-xl w-full "
+            className="rounded-xl w-full"
             src={images.Post1Image}
             alt="laptop"
           />
