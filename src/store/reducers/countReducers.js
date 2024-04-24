@@ -12,7 +12,7 @@ const countSlice = createSlice({
   },
 });
 
-const { countChange } = countSlice.actions;
+const countActions = countSlice.actions;
 const countReducer = countSlice.reducer;
 
-export { countChange, countReducer };
+export { countActions, countReducer };
