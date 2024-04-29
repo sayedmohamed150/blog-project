@@ -1,9 +1,23 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { useMutation } from "@tanstack/react-query";
 import MainLayout from "../../components/MainLayout";
 
 const RegisterPage = () => {
+  const { mutate, isLoading } = useMutation({
+    mutationFn: ({ name, email, password }) => {
+      return signup({ name, email, password });
+    },
+    onSuccess: (data) => {
+      console.log(data);
+    },
+    onError: (error) => {
+      toast.error(error.message)
+      console.log(error);
+    },
+  });
+
   const {
     register,
     handleSubmit,
