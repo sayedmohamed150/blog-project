@@ -1,9 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
+import {Toaster} from "react-hot-toast";
 
 import './App.css';
 import { HomePage } from './pages/home/HomePage';
 import ArticleDetailPage from './pages/articleDetail/ArticleDetailPage';
 import RegisterPage from './pages/register/RegisterPage';
+import toast from 'react-hot-toast';
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} /> 
 
       </Routes>
+      <Toaster />
     </div>
   );
 }
