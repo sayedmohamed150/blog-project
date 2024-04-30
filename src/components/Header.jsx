@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import { images } from "../constants";
 import { logout } from "../store/actions/user";
-
 const navItemsInfo = [
   { name: "Home", type: "link" },
   { name: "Articles", type: "link" },
@@ -64,21 +64,19 @@ const NavItem = ({ item }) => {
 };
 
 const Header = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [navIsVisible, setNavIsVisible] = useState(false);
   const userState = useSelector((state) => state.user);
   const [profileDrowpdown, setProfileDrowpdown] = useState(false);
-
   const navVisibilityHandler = () => {
     setNavIsVisible((curState) => {
       return !curState;
     });
   };
-
   const logoutHandler = () => {
     dispatch(logout());
   };
-
   return (
     <section className="sticky top-0 left-0 right-0 z-50 bg-white">
       <header className="container mx-auto px-5 flex justify-between py-4 items-center">
@@ -141,7 +139,10 @@ const Header = () => {
               </div>
             </div>
           ) : (
-            <button className="mt-5 lg:mt-0 border-2 border-blue-500 px-6 py-2 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white transition-all duration-300">
+            <button
+              onClick={() => navigate("/login")}
+              className="mt-5 lg:mt-0 border-2 border-blue-500 px-6 py-2 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white transition-all duration-300"
+            >
               Sign in
             </button>
           )}
