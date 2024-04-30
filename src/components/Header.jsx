@@ -10,14 +10,11 @@ const navItemsInfo = [
   { name: "Pricing", type: "link" },
   { name: "Faq", type: "link" },
 ];
-
 const NavItem = ({ item }) => {
   const [dropdown, setDropdown] = useState(false);
-
   const toggleDropdownHandler = () => {
     setDropdown((prevState) => !prevState);
   };
-
   return (
     <li className="relative group">
       {item.type === "link" ? (
@@ -30,7 +27,6 @@ const NavItem = ({ item }) => {
           </span>
         </>
       ) : (
-        <>
           <div className="flex flex-col items-center">
             <button
               className="px-4 py-2 flex gap-x-1 items-center"
@@ -75,7 +71,6 @@ const Header = () => {
         <div>
           <img className="w-16" src={images.Logo} alt="logo" />
         </div>
-
         <div className="lg:hidden z-50">
           {navIsVisible ? (
             <AiOutlineClose
@@ -107,5 +102,4 @@ const Header = () => {
     </section>
   );
 };
-
 export default Header;
