@@ -1,26 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
-import MainLayout from "../../components/MainLayout";
-import { MdSettingsBackupRestore } from "react-icons/md";
-
-import { signup } from "../../services/index/users";
 import toast from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+
+import MainLayout from "../../components/MainLayout";
+import { signup } from "../../services/index/users";
+import { userActions } from "../../store/reducers/userReducers";
 
 const RegisterPage = () => {
- const { mutate, isLoading } = useMutation({
-  mutationFn:({name, email, password}) => {
-    return signup({name, email, password});
-  },
-  onSuccess: (data) => {
-     console.log(data);
-  },
-  onError:(error) => {
-    toast.error(error.message);
-    console.log(error);
-  }
- });
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const userState = useSelector((state) => state.user);
+
+  const { mutate, isLoading } = useMutation({
+    mutationFn: ({ name, email, password }) => {
+      return signup({ name, email, password });
+    },
+    onSuccess: (data) => {
+      dispatch(userActions.setUserInfo(data));
+      localStorage.setItem("account", JSON.stringify(data));
+    },
+    onError: (error) => {
+      toast.error(error.message);
+      console.log(error);
+    },
+  });
+
+  useEffect(() => {
+    if (userState.userInfo) {
+      navigate("/");
+    }
+  }, [navigate, userState.userInfo]);
 
   const {
     register,
@@ -36,14 +48,11 @@ const RegisterPage = () => {
     },
     mode: "onChange",
   });
-
   const submitHandler = (data) => {
-    const {name, email, password} = data
-    mutate({name, email, password})
+    const { name, email, password } = data;
+    mutate({ name, email, password });
   };
-
   const password = watch("password");
-
   return (
     <MainLayout>
       <section className="container mx-auto px-5 py-10 text-left">
@@ -203,5 +212,4 @@ const RegisterPage = () => {
     </MainLayout>
   );
 };
-
 export default RegisterPage;
